@@ -103,11 +103,11 @@ class ApiVK:
             return photo.copy()
 
 def __main__():
-    vk = ApiVK('7805267', '3U35CT7r5H4M527IrA6S', 'c2e7f6b0c2e7f6b0c2e7f6b0d1c290efe3cc2e7c2e7f6b0a2b860923852733185e467d2',
+    vk = ApiVK('client_id', 'client_secret', 'serv_key',
            'client_credentials', '5.130')
-    photo = vk.get_photo('646854180', 5)
+    photo = vk.get_photo('owner_id', count_photo)
 
-    ya = YaUpLoader('AQAAAAARbtX1AADLWxAE9XnSmUgpuBeAiJxlZBI')
+    ya = YaUpLoader('token')
     ya.create_catalog('vk_photo')
     ya.upload_vk_list(photo)
     file_info = ya.save_info()
